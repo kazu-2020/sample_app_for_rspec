@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Task, type: :model do
   describe 'validation' do
-    let(:task) { FactoryBot.create(:task) }
-    let(:another_task) { FactoryBot.create(:task) }
+    let(:task) { create(:task) }
+    let(:another_task) { create(:task) }
 
     it 'is valid with all attributes' do
       expect(task).to be_valid
