@@ -78,7 +78,6 @@ RSpec.describe "Tasks", type: :system do
     end
 
     describe 'タスク編集機能' do
-      let(:task) { create(:task) }
       before { visit edit_task_path(task) }
 
       context '入力値が正常な場合' do
@@ -114,7 +113,6 @@ RSpec.describe "Tasks", type: :system do
 
     describe 'タスク編集ページ' do
       let(:another_user) { create(:user) }
-      let(:task) { create(:task) }
       before { log_in_as(another_user) }
       context '他ユーザーのタスク編集ページにアクセスする場合' do
         before { visit edit_task_path(task) }
@@ -127,7 +125,6 @@ RSpec.describe "Tasks", type: :system do
     end
 
     describe 'タスク削除' do
-      let(:task) { create(:task) }
       before { log_in_as(task.user) }
       context 'Destroyリンクをクリックする場合' do
         before do
